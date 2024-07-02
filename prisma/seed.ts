@@ -37,8 +37,8 @@ const itemData: Prisma.ItemCreateInput[] = [
 const userData: Prisma.UserCreateInput[] = [
     {
         id: randomUUID(),
-        name: 'cleiton sampaio',
-        email:  'cleiton@gmail.com',
+        name: 'thales lagemman',
+        email:  'thales@gmail.com',
         password: randomUUID()
     },
 ];
