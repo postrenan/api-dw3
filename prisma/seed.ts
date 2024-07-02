@@ -1,10 +1,11 @@
 import { PrismaClient, Prisma } from '@prisma/client';
+import {randomUUID} from "node:crypto";
 
 const prisma = new PrismaClient();
 
 const itemData: Prisma.ItemCreateInput[] = [
     {
-        id: '?',
+        id: randomUUID(),
         name: 'Sabonete',
         category: 'Higiene',
         description: '',
@@ -13,7 +14,7 @@ const itemData: Prisma.ItemCreateInput[] = [
         dataVal: '2024-07-02T20:40:37Z'
     },
     {
-        id: '?',
+        id: randomUUID(),
         name: 'Detergente',
         category: 'Limpeza',
         description: '',
@@ -22,7 +23,7 @@ const itemData: Prisma.ItemCreateInput[] = [
         dataVal: '2024-07-02T20:40:37Z'
     },
     {
-        id: '?',
+        id: randomUUID(),
         name: 'Arroz',
         category: 'Suprimento',
         description: '',
@@ -31,6 +32,17 @@ const itemData: Prisma.ItemCreateInput[] = [
         dataVal: '2024-07-02T20:40:37Z'
     },
 ];
+
+
+const userData: Prisma.UserCreateInput[] = [
+    {
+        id: randomUUID(),
+        name: 'cleiton sampaio',
+        email:  'cleiton@gmail.com',
+        password: randomUUID()
+    },
+];
+
 
 async function main() {
     console.log(`Start seeding ...`);
@@ -42,6 +54,14 @@ async function main() {
             update: {},
         });
         console.log(`Upserted Item with id: ${item.id}`);
+    }
+    for (const u of userData) {
+        const user = await prisma.user.upsert({
+            where: { id: u.id },
+            create: u,
+            update: {},
+        });
+        console.log(`Upserted User with id: ${user.id}`);
     }
     console.log(`Seeding finished.`);
 }
