@@ -16,7 +16,7 @@ generator client {
 /// @@allow('create', true)
 /// @@allow('read', true)
 model User {
-  id       String    @id() @default(cuid())
+  id       String    @id() @default(uuid())
   email    String    @unique()
   /// @password
   /// @omit
@@ -24,21 +24,25 @@ model User {
   estoques Estoque[]
 }
 
-/// @@allow('read', estoqueId == null || estoque.user == auth())
+/// @@allow('read,create', estoqueId == null || estoque.user == auth())
 /// @@allow('update', name == future().name && category == future().category && estoqueId == null)
 model Item {
-  id        String   @id() @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt()
-  name      String
-  category  String
-  estoque   Estoque? @relation(fields: [estoqueId], references: [id])
-  estoqueId String?
+  id          String   @id() @default(uuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt()
+  name        String
+  description String
+  qtd         Int
+  kgl         Float
+  dataVal     DateTime
+  category    String
+  estoque     Estoque? @relation(fields: [estoqueId], references: [id])
+  estoqueId   String?
 }
 
 /// @@allow('read,create', auth() == user)
 model Estoque {
-  id        String   @id() @default(cuid())
+  id        String   @id() @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt()
   itens     Item[]

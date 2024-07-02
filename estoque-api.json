@@ -1290,6 +1290,242 @@
             }
           },
           {
+            "name": "filter[description]",
+            "required": false,
+            "description": "Equality filter for \"description\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[description$contains]",
+            "required": false,
+            "description": "String contains filter for \"description\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[description$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"description\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[description$search]",
+            "required": false,
+            "description": "String full-text search filter for \"description\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[description$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"description\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[description$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"description\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[qtd]",
+            "required": false,
+            "description": "Equality filter for \"qtd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[qtd$lt]",
+            "required": false,
+            "description": "Less-than filter for \"qtd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[qtd$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"qtd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[qtd$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"qtd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[qtd$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"qtd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[kgl]",
+            "required": false,
+            "description": "Equality filter for \"kgl\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[kgl$lt]",
+            "required": false,
+            "description": "Less-than filter for \"kgl\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[kgl$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"kgl\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[kgl$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"kgl\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[kgl$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"kgl\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[dataVal]",
+            "required": false,
+            "description": "Equality filter for \"dataVal\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[dataVal$lt]",
+            "required": false,
+            "description": "Less-than filter for \"dataVal\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[dataVal$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"dataVal\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[dataVal$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"dataVal\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[dataVal$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"dataVal\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
             "name": "filter[category]",
             "required": false,
             "description": "Equality filter for \"category\"",
@@ -3683,6 +3919,19 @@
               "name": {
                 "type": "string"
               },
+              "description": {
+                "type": "string"
+              },
+              "qtd": {
+                "type": "integer"
+              },
+              "kgl": {
+                "type": "number"
+              },
+              "dataVal": {
+                "type": "string",
+                "format": "date-time"
+              },
               "category": {
                 "type": "string"
               },
@@ -3730,6 +3979,10 @@
                 "required": [
                   "updatedAt",
                   "name",
+                  "description",
+                  "qtd",
+                  "kgl",
+                  "dataVal",
                   "category"
                 ],
                 "properties": {
@@ -3743,6 +3996,19 @@
                   },
                   "name": {
                     "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "qtd": {
+                    "type": "integer"
+                  },
+                  "kgl": {
+                    "type": "number"
+                  },
+                  "dataVal": {
+                    "type": "string",
+                    "format": "date-time"
                   },
                   "category": {
                     "type": "string"
@@ -3808,6 +4074,19 @@
                   },
                   "name": {
                     "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "qtd": {
+                    "type": "integer"
+                  },
+                  "kgl": {
+                    "type": "number"
+                  },
+                  "dataVal": {
+                    "type": "string",
+                    "format": "date-time"
                   },
                   "category": {
                     "type": "string"

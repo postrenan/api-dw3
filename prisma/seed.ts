@@ -4,19 +4,31 @@ const prisma = new PrismaClient();
 
 const itemData: Prisma.ItemCreateInput[] = [
     {
-        id: 'sabonete',
+        id: '?',
         name: 'Sabonete',
         category: 'Higiene',
+        description: '',
+        qtd: 0,
+        kgl: 0,
+        dataVal: '2024-07-02T20:40:37Z'
     },
     {
-        id: 'detergente',
+        id: '?',
         name: 'Detergente',
         category: 'Limpeza',
+        description: '',
+        qtd: 0,
+        kgl: 0,
+        dataVal: '2024-07-02T20:40:37Z'
     },
     {
-        id: 'arroz',
+        id: '?',
         name: 'Arroz',
         category: 'Suprimento',
+        description: '',
+        qtd: 0,
+        kgl: 0,
+        dataVal: '2024-07-02T20:40:37Z'
     },
 ];
 
@@ -29,7 +41,7 @@ async function main() {
             create: i,
             update: {},
         });
-        console.log(`Upserted Pet with id: ${item.id}`);
+        console.log(`Upserted Item with id: ${item.id}`);
     }
     console.log(`Seeding finished.`);
 }

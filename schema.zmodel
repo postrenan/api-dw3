@@ -9,7 +9,7 @@ generator client {
 }
 
 model User {
-    id String @id @default(cuid())
+    id String @id @default(uuid())
     email String @unique
     password String @password @omit
     estoques Estoque[]
@@ -18,29 +18,31 @@ model User {
     @@allow('read', true)
 }
 model Item {
-    id String @id @default(cuid())
+    id String @id @default(uuid())
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
     name String
+    description String
+    qtd Int
+    kgl Float
+    dataVal DateTime
     category String
     estoque Estoque? @relation(fields: [estoqueId], references: [id])
     estoqueId String?
 
-       @@allow('read', estoqueId == null || estoque.user == auth())
-
-        // only allow update to 'orderId' field if it's not set yet (unsold)
-        @@allow('update', name == future().name && category == future().category && estoqueId == null )
+    @@allow('read,create', estoqueId == null || estoque.user == auth())
+    @@allow('update', name == future().name && category == future().category && estoqueId == null)
 }
 
 model Estoque {
-    id String @id @default(cuid())
+    id String @id @default(uuid())
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
     itens Item[]
     user User @relation(fields: [userId], references: [id])
     userId String
 
-     @@allow('read,create', auth() == user)
+    @@allow('read,create', auth() == user)
 }
 
 plugin openapi {
