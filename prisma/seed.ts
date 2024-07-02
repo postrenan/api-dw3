@@ -45,7 +45,6 @@ async function main() {
         });
         console.log(`Upserted Item with id: ${item.id}`);
     }
-
     console.log(`Seeding finished.`);
 }
 
