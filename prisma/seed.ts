@@ -34,16 +34,6 @@ const itemData: Prisma.ItemCreateInput[] = [
 ];
 
 
-const userData: Prisma.UserCreateInput[] = [
-    {
-        id: randomUUID(),
-        name: 'thales lagemman',
-        email:  'thales@gmail.com',
-        password: randomUUID()
-    },
-];
-
-
 async function main() {
     console.log(`Start seeding ...`);
     for (const i of itemData) {
@@ -55,14 +45,7 @@ async function main() {
         });
         console.log(`Upserted Item with id: ${item.id}`);
     }
-    for (const u of userData) {
-        const user = await prisma.user.upsert({
-            where: { id: u.id },
-            create: u,
-            update: {},
-        });
-        console.log(`Upserted User with id: ${user.id}`);
-    }
+
     console.log(`Seeding finished.`);
 }
 
