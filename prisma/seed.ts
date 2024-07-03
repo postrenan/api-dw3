@@ -37,7 +37,7 @@ const itemData: Prisma.ItemCreateInput[] = [
 async function main() {
     console.log(`Start seeding ...`);
     for (const i of itemData) {
-        // create pet if not exists
+
         const item = await prisma.item.upsert({
             where: { id: i.id },
             create: i,
