@@ -11,7 +11,8 @@ const itemData: Prisma.ItemCreateInput[] = [
         description: '',
         qtd: 0,
         kgl: 0,
-        dataVal: '2024-07-02T20:40:37Z'
+        dataVal: '2024-07-02T20:40:37Z',
+        perecivel: false,
     },
     {
         id: randomUUID(),
@@ -20,7 +21,8 @@ const itemData: Prisma.ItemCreateInput[] = [
         description: '',
         qtd: 0,
         kgl: 0,
-        dataVal: '2024-07-02T20:40:37Z'
+        dataVal: '2024-07-02T20:40:37Z',
+        perecivel: false
     },
     {
         id: randomUUID(),
@@ -29,7 +31,8 @@ const itemData: Prisma.ItemCreateInput[] = [
         description: '',
         qtd: 0,
         kgl: 0,
-        dataVal: '2024-07-02T20:40:37Z'
+        dataVal: '2024-07-02T20:40:37Z',
+        perecivel: true
     },
 ];
 
