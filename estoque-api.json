@@ -17,6 +17,10 @@
     {
       "name": "estoque",
       "description": "Estoque operations"
+    },
+    {
+      "name": "categoria",
+      "description": "Categoria operations"
     }
   ],
   "paths": {
@@ -262,6 +266,126 @@
                 "type": "string"
               }
             }
+          },
+          {
+            "name": "filter[createdAt]",
+            "required": false,
+            "description": "Equality filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[createdAt$lt]",
+            "required": false,
+            "description": "Less-than filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[createdAt$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[createdAt$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[createdAt$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt]",
+            "required": false,
+            "description": "Equality filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt$lt]",
+            "required": false,
+            "description": "Less-than filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
           }
         ],
         "responses": {
@@ -448,7 +572,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       },
       "patch": {
         "operationId": "update-User-patch",
@@ -511,7 +636,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       },
       "delete": {
         "operationId": "delete-User",
@@ -548,7 +674,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       }
     },
     "/api/user/{id}/estoques": {
@@ -796,6 +923,126 @@
                 "type": "string"
               }
             }
+          },
+          {
+            "name": "filter[createdAt]",
+            "required": false,
+            "description": "Equality filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[createdAt$lt]",
+            "required": false,
+            "description": "Less-than filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[createdAt$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[createdAt$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[createdAt$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt]",
+            "required": false,
+            "description": "Equality filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt$lt]",
+            "required": false,
+            "description": "Less-than filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
           }
         ],
         "responses": {
@@ -829,7 +1076,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       }
     },
     "/api/user/{id}/relationships/estoques": {
@@ -1074,232 +1322,6 @@
                 "type": "string"
               }
             }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      },
-      "put": {
-        "operationId": "update-User-relationship-estoques-put",
-        "description": "Update \"estoques\" relationships for a \"User\"",
-        "tags": [
-          "user"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/vnd.api+json": {
-              "schema": {
-                "$ref": "#/components/schemas/_toManyRelationshipRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "patch": {
-        "operationId": "update-User-relationship-estoques-patch",
-        "description": "Update \"estoques\" relationships for a \"User\"",
-        "tags": [
-          "user"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/vnd.api+json": {
-              "schema": {
-                "$ref": "#/components/schemas/_toManyRelationshipRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "operationId": "create-User-relationship-estoques",
-        "description": "Create new \"estoques\" relationships for a \"User\"",
-        "tags": [
-          "user"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/vnd.api+json": {
-              "schema": {
-                "$ref": "#/components/schemas/_toManyRelationshipRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/item": {
-      "get": {
-        "operationId": "list-Item",
-        "description": "List \"Item\" resources",
-        "tags": [
-          "item"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/include"
-          },
-          {
-            "$ref": "#/components/parameters/sort"
-          },
-          {
-            "$ref": "#/components/parameters/page-offset"
-          },
-          {
-            "$ref": "#/components/parameters/page-limit"
-          },
-          {
-            "name": "filter[id]",
-            "required": false,
-            "description": "Id filter",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
           },
           {
             "name": "filter[createdAt]",
@@ -1419,6 +1441,235 @@
             "schema": {
               "type": "string",
               "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "put": {
+        "operationId": "update-User-relationship-estoques-put",
+        "description": "Update \"estoques\" relationships for a \"User\"",
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/_toManyRelationshipRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "patch": {
+        "operationId": "update-User-relationship-estoques-patch",
+        "description": "Update \"estoques\" relationships for a \"User\"",
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/_toManyRelationshipRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "operationId": "create-User-relationship-estoques",
+        "description": "Create new \"estoques\" relationships for a \"User\"",
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/_toManyRelationshipRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/item": {
+      "get": {
+        "operationId": "list-Item",
+        "description": "List \"Item\" resources",
+        "tags": [
+          "item"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/include"
+          },
+          {
+            "$ref": "#/components/parameters/sort"
+          },
+          {
+            "$ref": "#/components/parameters/page-offset"
+          },
+          {
+            "$ref": "#/components/parameters/page-limit"
+          },
+          {
+            "name": "filter[id]",
+            "required": false,
+            "description": "Id filter",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
             }
           },
           {
@@ -1724,6 +1975,17 @@
             }
           },
           {
+            "name": "filter[perecivel]",
+            "required": false,
+            "description": "Equality filter for \"perecivel\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "filter[category]",
             "required": false,
             "description": "Equality filter for \"category\"",
@@ -1799,6 +2061,126 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "filter[createdAt]",
+            "required": false,
+            "description": "Equality filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[createdAt$lt]",
+            "required": false,
+            "description": "Less-than filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[createdAt$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[createdAt$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[createdAt$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt]",
+            "required": false,
+            "description": "Equality filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt$lt]",
+            "required": false,
+            "description": "Less-than filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
           }
         ],
         "responses": {
@@ -1822,7 +2204,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       },
       "post": {
         "operationId": "create-Item",
@@ -1870,7 +2253,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       }
     },
     "/api/item/{id}": {
@@ -1919,7 +2303,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       },
       "put": {
         "operationId": "update-Item-put",
@@ -1982,7 +2367,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       },
       "patch": {
         "operationId": "update-Item-patch",
@@ -2045,7 +2431,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       },
       "delete": {
         "operationId": "delete-Item",
@@ -2082,7 +2469,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       }
     },
     "/api/item/{id}/estoque": {
@@ -2131,7 +2519,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       }
     },
     "/api/item/{id}/relationships/estoque": {
@@ -2177,7 +2566,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       },
       "put": {
         "operationId": "update-Item-relationship-estoque-put",
@@ -2230,7 +2620,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       },
       "patch": {
         "operationId": "update-Item-relationship-estoque-patch",
@@ -2283,7 +2674,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       }
     },
     "/api/estoque": {
@@ -2310,6 +2702,31 @@
             "name": "filter[id]",
             "required": false,
             "description": "Id filter",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[itens]",
+            "required": false,
+            "description": "Equality filter for \"itens\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "filter[user]",
+            "required": false,
+            "description": "Equality filter for \"user\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2436,31 +2853,6 @@
               "type": "string",
               "format": "date-time"
             }
-          },
-          {
-            "name": "filter[itens]",
-            "required": false,
-            "description": "Equality filter for \"itens\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          {
-            "name": "filter[user]",
-            "required": false,
-            "description": "Equality filter for \"user\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -2484,7 +2876,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       },
       "post": {
         "operationId": "create-Estoque",
@@ -2532,7 +2925,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       }
     },
     "/api/estoque/{id}": {
@@ -2581,7 +2975,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       },
       "put": {
         "operationId": "update-Estoque-put",
@@ -2644,7 +3039,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       },
       "patch": {
         "operationId": "update-Estoque-patch",
@@ -2707,7 +3103,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       },
       "delete": {
         "operationId": "delete-Estoque",
@@ -2744,7 +3141,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       }
     },
     "/api/estoque/{id}/itens": {
@@ -2782,6 +3180,31 @@
             }
           },
           {
+            "name": "filter[itens]",
+            "required": false,
+            "description": "Equality filter for \"itens\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "filter[user]",
+            "required": false,
+            "description": "Equality filter for \"user\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "filter[createdAt]",
             "required": false,
             "description": "Equality filter for \"createdAt\"",
@@ -2899,31 +3322,6 @@
             "schema": {
               "type": "string",
               "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[itens]",
-            "required": false,
-            "description": "Equality filter for \"itens\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          {
-            "name": "filter[user]",
-            "required": false,
-            "description": "Equality filter for \"user\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -2958,7 +3356,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       }
     },
     "/api/estoque/{id}/relationships/itens": {
@@ -2985,6 +3384,31 @@
             "name": "filter[id]",
             "required": false,
             "description": "Id filter",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[itens]",
+            "required": false,
+            "description": "Equality filter for \"itens\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "filter[user]",
+            "required": false,
+            "description": "Equality filter for \"user\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -3111,31 +3535,6 @@
               "type": "string",
               "format": "date-time"
             }
-          },
-          {
-            "name": "filter[itens]",
-            "required": false,
-            "description": "Equality filter for \"itens\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          {
-            "name": "filter[user]",
-            "required": false,
-            "description": "Equality filter for \"user\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -3169,7 +3568,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       },
       "put": {
         "operationId": "update-Estoque-relationship-itens-put",
@@ -3222,7 +3622,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       },
       "patch": {
         "operationId": "update-Estoque-relationship-itens-patch",
@@ -3275,7 +3676,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       },
       "post": {
         "operationId": "create-Estoque-relationship-itens",
@@ -3328,7 +3730,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       }
     },
     "/api/estoque/{id}/user": {
@@ -3424,7 +3827,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       },
       "put": {
         "operationId": "update-Estoque-relationship-user-put",
@@ -3477,7 +3881,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       },
       "patch": {
         "operationId": "update-Estoque-relationship-user-patch",
@@ -3530,7 +3935,516 @@
               }
             }
           }
-        }
+        },
+        "security": []
+      }
+    },
+    "/api/categoria": {
+      "get": {
+        "operationId": "list-Categoria",
+        "description": "List \"Categoria\" resources",
+        "tags": [
+          "categoria"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/include"
+          },
+          {
+            "$ref": "#/components/parameters/sort"
+          },
+          {
+            "$ref": "#/components/parameters/page-offset"
+          },
+          {
+            "$ref": "#/components/parameters/page-limit"
+          },
+          {
+            "name": "filter[id]",
+            "required": false,
+            "description": "Id filter",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[nome]",
+            "required": false,
+            "description": "Equality filter for \"nome\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[nome$contains]",
+            "required": false,
+            "description": "String contains filter for \"nome\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[nome$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"nome\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[nome$search]",
+            "required": false,
+            "description": "String full-text search filter for \"nome\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[nome$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"nome\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[nome$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"nome\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[createdAt]",
+            "required": false,
+            "description": "Equality filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[createdAt$lt]",
+            "required": false,
+            "description": "Less-than filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[createdAt$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[createdAt$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[createdAt$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"createdAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt]",
+            "required": false,
+            "description": "Equality filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt$lt]",
+            "required": false,
+            "description": "Less-than filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updatedAt$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"updatedAt\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoriaListResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "operationId": "create-Categoria",
+        "description": "Create a \"Categoria\" resource",
+        "tags": [
+          "categoria"
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoriaCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoriaResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Request is unprocessable due to validation errors",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/categoria/{id}": {
+      "get": {
+        "operationId": "fetch-Categoria",
+        "description": "Fetch a \"Categoria\" resource",
+        "tags": [
+          "categoria"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          },
+          {
+            "$ref": "#/components/parameters/include"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoriaResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "put": {
+        "operationId": "update-Categoria-put",
+        "description": "Update a \"Categoria\" resource",
+        "tags": [
+          "categoria"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoriaUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoriaResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Request is unprocessable due to validation errors",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "patch": {
+        "operationId": "update-Categoria-patch",
+        "description": "Update a \"Categoria\" resource",
+        "tags": [
+          "categoria"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoriaUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoriaResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Request is unprocessable due to validation errors",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "operationId": "delete-Categoria",
+        "description": "Delete a \"Categoria\" resource",
+        "tags": [
+          "categoria"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": []
       }
     }
   },
@@ -3883,6 +4797,14 @@
               },
               "password": {
                 "type": "string"
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updatedAt": {
+                "type": "string",
+                "format": "date-time"
               }
             }
           },
@@ -3919,7 +4841,8 @@
                 "required": [
                   "email",
                   "name",
-                  "password"
+                  "password",
+                  "updatedAt"
                 ],
                 "properties": {
                   "email": {
@@ -3930,6 +4853,14 @@
                   },
                   "password": {
                     "type": "string"
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
                   }
                 }
               },
@@ -3981,6 +4912,14 @@
                   },
                   "password": {
                     "type": "string"
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
                   }
                 }
               },
@@ -4116,14 +5055,6 @@
           "attributes": {
             "type": "object",
             "properties": {
-              "createdAt": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "updatedAt": {
-                "type": "string",
-                "format": "date-time"
-              },
               "name": {
                 "type": "string"
               },
@@ -4140,12 +5071,23 @@
                 "type": "string",
                 "format": "date-time"
               },
+              "perecivel": {
+                "type": "boolean"
+              },
               "category": {
                 "type": "string"
               },
               "estoqueId": {
                 "type": "string",
                 "nullable": true
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updatedAt": {
+                "type": "string",
+                "format": "date-time"
               }
             }
           },
@@ -4185,23 +5127,16 @@
               "attributes": {
                 "type": "object",
                 "required": [
-                  "updatedAt",
                   "name",
                   "description",
                   "qtd",
                   "kgl",
                   "dataVal",
-                  "category"
+                  "perecivel",
+                  "category",
+                  "updatedAt"
                 ],
                 "properties": {
-                  "createdAt": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "updatedAt": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
                   "name": {
                     "type": "string"
                   },
@@ -4218,12 +5153,23 @@
                     "type": "string",
                     "format": "date-time"
                   },
+                  "perecivel": {
+                    "type": "boolean"
+                  },
                   "category": {
                     "type": "string"
                   },
                   "estoqueId": {
                     "type": "string",
                     "nullable": true
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
                   }
                 }
               },
@@ -4272,14 +5218,6 @@
               "attributes": {
                 "type": "object",
                 "properties": {
-                  "createdAt": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "updatedAt": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
                   "name": {
                     "type": "string"
                   },
@@ -4296,12 +5234,23 @@
                     "type": "string",
                     "format": "date-time"
                   },
+                  "perecivel": {
+                    "type": "boolean"
+                  },
                   "category": {
                     "type": "string"
                   },
                   "estoqueId": {
                     "type": "string",
                     "nullable": true
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
                   }
                 }
               },
@@ -4442,6 +5391,9 @@
           "attributes": {
             "type": "object",
             "properties": {
+              "userId": {
+                "type": "string"
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -4449,9 +5401,6 @@
               "updatedAt": {
                 "type": "string",
                 "format": "date-time"
-              },
-              "userId": {
-                "type": "string"
               }
             }
           },
@@ -4489,10 +5438,13 @@
               "attributes": {
                 "type": "object",
                 "required": [
-                  "updatedAt",
-                  "userId"
+                  "userId",
+                  "updatedAt"
                 ],
                 "properties": {
+                  "userId": {
+                    "type": "string"
+                  },
                   "createdAt": {
                     "type": "string",
                     "format": "date-time"
@@ -4500,9 +5452,6 @@
                   "updatedAt": {
                     "type": "string",
                     "format": "date-time"
-                  },
-                  "userId": {
-                    "type": "string"
                   }
                 }
               },
@@ -4549,6 +5498,9 @@
               "attributes": {
                 "type": "object",
                 "properties": {
+                  "userId": {
+                    "type": "string"
+                  },
                   "createdAt": {
                     "type": "string",
                     "format": "date-time"
@@ -4556,9 +5508,6 @@
                   "updatedAt": {
                     "type": "string",
                     "format": "date-time"
-                  },
-                  "userId": {
-                    "type": "string"
                   }
                 }
               },
@@ -4658,6 +5607,220 @@
                           "$ref": "#/components/schemas/_toOneRelationship"
                         }
                       }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/_resource"
+            }
+          },
+          "links": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/_links"
+              },
+              {
+                "$ref": "#/components/schemas/_pagination"
+              }
+            ]
+          }
+        }
+      },
+      "Categoria": {
+        "type": "object",
+        "description": "The \"Categoria\" model",
+        "required": [
+          "id",
+          "type",
+          "attributes"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "nome": {
+                "type": "string"
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updatedAt": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        }
+      },
+      "CategoriaCreateRequest": {
+        "type": "object",
+        "description": "Input for creating a \"Categoria\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "The \"Categoria\" model",
+            "required": [
+              "type",
+              "attributes"
+            ],
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "object",
+                "required": [
+                  "nome",
+                  "updatedAt"
+                ],
+                "properties": {
+                  "nome": {
+                    "type": "string"
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              }
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          }
+        }
+      },
+      "CategoriaUpdateRequest": {
+        "type": "object",
+        "description": "Input for updating a \"Categoria\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "The \"Categoria\" model",
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string"
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              }
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          }
+        }
+      },
+      "CategoriaResponse": {
+        "type": "object",
+        "description": "Response for a \"Categoria\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "jsonapi": {
+            "$ref": "#/components/schemas/_jsonapi"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Categoria"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {}
+                  }
+                }
+              }
+            ]
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/_resource"
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/_links"
+          }
+        }
+      },
+      "CategoriaListResponse": {
+        "type": "object",
+        "description": "Response for a list of \"Categoria\"",
+        "required": [
+          "data",
+          "links"
+        ],
+        "properties": {
+          "jsonapi": {
+            "$ref": "#/components/schemas/_jsonapi"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Categoria"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {}
                     }
                   }
                 }
