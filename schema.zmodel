@@ -38,7 +38,6 @@ model Estoque {
     userId String
     createdAt DateTime @default(now())
     updatedAt DateTime? @updatedAt
-
     @@allow('all', true )
 }
 
