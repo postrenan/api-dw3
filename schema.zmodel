@@ -13,11 +13,10 @@ model User {
     email String @unique
     name String
     password String @password
-    estoques Estoque[]
     createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+    updatedAt DateTime? @updatedAt
 
-    @@allow('create, update, read, delete', true)
+    @@allow('all', true)
 }
 model Item {
     id String @id @default(uuid())
@@ -25,35 +24,31 @@ model Item {
     description String
     qtd Int
     kgl Float
-    dataVal DateTime
+    dataVal DateTime?
     perecivel Boolean @default(true)
     category String
-    estoque Estoque? @relation(fields: [estoqueId], references: [id])
-    estoqueId String?
     createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+    updatedAt DateTime? @updatedAt
 
-    @@allow('read,create, update, delete', true)
+    @@allow('all', true)
 }
 
 model Estoque {
     id String @id @default(uuid())
-    itens Item[]
-    user User @relation(fields: [userId], references: [id])
     userId String
     createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+    updatedAt DateTime? @updatedAt
 
-    @@allow('read,create,update,delete', true )
+    @@allow('all', true )
 }
 
 model Categoria {
     id String @id @default(uuid())
     nome String
     createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+    updatedAt DateTime? @updatedAt
 
-    @@allow('read,create,update, delete', true)
+    @@allow('all', true)
 }
 
 plugin openapi {

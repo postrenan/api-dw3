@@ -37,6 +37,22 @@ app.use(
         handler: apiHandler
     })
 );
+
+
+app.post('/api/login', async (req, res) => {
+    const { email, password } = req.body;
+    const user = await prisma.user.findFirst({
+        where: { email },
+    });
+    if (!user || !compareSync(password, user.password)) {
+        res.status(401).json({ error: 'Invalid credentials' });
+    } else {
+        // sign a JWT token and return it in the response
+        const token = jwt.sign({ sub: user.id }, process.env.JWT_SECRET!);
+        res.json({ id: user.id, email: user.email, token });
+    }
+});
+
 function getUser(req: Request) {
     const token = req.headers.authorization?.split(' ')[1];
     console.log('TOKEN:', token);
@@ -52,17 +68,4 @@ function getUser(req: Request) {
     }
 }
 
-app.post('/api/login', async (req, res) => {
-    const { email, password } = req.body;
-    const user = await prisma.user.findFirst({
-        where: { email },
-    });
-    if (!user || !compareSync(password, user.password)) {
-        res.status(401).json({ error: 'Invalid credentials' });
-    } else {
-        // sign a JWT token and return it in the response
-        const token = jwt.sign({ sub: user.id }, process.env.JWT_SECRET!);
-        res.json({ id: user.id, email: user.email, token });
-    }
-});
 export default app;

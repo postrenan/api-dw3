@@ -13,48 +13,43 @@ generator client {
   provider = "prisma-client-js"
 }
 
-/// @@allow('create, update, read, delete', true)
+/// @@allow('all', true)
 model User {
   id        String    @id() @default(uuid())
   email     String    @unique()
   name      String
   /// @password
   password  String
-  estoques  Estoque[]
   createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt()
+  updatedAt DateTime? @updatedAt()
 }
 
-/// @@allow('read,create, update, delete', true)
+/// @@allow('all', true)
 model Item {
-  id          String   @id() @default(uuid())
+  id          String    @id() @default(uuid())
   name        String
   description String
   qtd         Int
   kgl         Float
-  dataVal     DateTime
-  perecivel   Boolean  @default(true)
+  dataVal     DateTime?
+  perecivel   Boolean   @default(true)
   category    String
-  estoque     Estoque? @relation(fields: [estoqueId], references: [id])
-  estoqueId   String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt()
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime? @updatedAt()
 }
 
-/// @@allow('read,create,update,delete', true)
+/// @@allow('all', true)
 model Estoque {
-  id        String   @id() @default(uuid())
-  itens     Item[]
-  user      User     @relation(fields: [userId], references: [id])
+  id        String    @id() @default(uuid())
   userId    String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt()
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt()
 }
 
-/// @@allow('read,create,update, delete', true)
+/// @@allow('all', true)
 model Categoria {
-  id        String   @id() @default(uuid())
+  id        String    @id() @default(uuid())
   nome      String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt()
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt()
 }

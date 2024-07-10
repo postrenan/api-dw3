@@ -254,20 +254,6 @@
             }
           },
           {
-            "name": "filter[estoques]",
-            "required": false,
-            "description": "Equality filter for \"estoques\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          {
             "name": "filter[createdAt]",
             "required": false,
             "description": "Equality filter for \"createdAt\"",
@@ -653,969 +639,6 @@
         "responses": {
           "200": {
             "description": "Successful operation"
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      }
-    },
-    "/api/user/{id}/estoques": {
-      "get": {
-        "operationId": "fetch-User-related-estoques",
-        "description": "Fetch the related \"estoques\" resource for \"User\"",
-        "tags": [
-          "user"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          },
-          {
-            "$ref": "#/components/parameters/include"
-          },
-          {
-            "$ref": "#/components/parameters/sort"
-          },
-          {
-            "$ref": "#/components/parameters/page-offset"
-          },
-          {
-            "$ref": "#/components/parameters/page-limit"
-          },
-          {
-            "name": "filter[id]",
-            "required": false,
-            "description": "Id filter",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[email]",
-            "required": false,
-            "description": "Equality filter for \"email\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[email$contains]",
-            "required": false,
-            "description": "String contains filter for \"email\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[email$icontains]",
-            "required": false,
-            "description": "String case-insensitive contains filter for \"email\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[email$search]",
-            "required": false,
-            "description": "String full-text search filter for \"email\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[email$startsWith]",
-            "required": false,
-            "description": "String startsWith filter for \"email\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[email$endsWith]",
-            "required": false,
-            "description": "String endsWith filter for \"email\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[name]",
-            "required": false,
-            "description": "Equality filter for \"name\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[name$contains]",
-            "required": false,
-            "description": "String contains filter for \"name\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[name$icontains]",
-            "required": false,
-            "description": "String case-insensitive contains filter for \"name\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[name$search]",
-            "required": false,
-            "description": "String full-text search filter for \"name\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[name$startsWith]",
-            "required": false,
-            "description": "String startsWith filter for \"name\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[name$endsWith]",
-            "required": false,
-            "description": "String endsWith filter for \"name\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[password]",
-            "required": false,
-            "description": "Equality filter for \"password\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[password$contains]",
-            "required": false,
-            "description": "String contains filter for \"password\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[password$icontains]",
-            "required": false,
-            "description": "String case-insensitive contains filter for \"password\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[password$search]",
-            "required": false,
-            "description": "String full-text search filter for \"password\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[password$startsWith]",
-            "required": false,
-            "description": "String startsWith filter for \"password\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[password$endsWith]",
-            "required": false,
-            "description": "String endsWith filter for \"password\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[estoques]",
-            "required": false,
-            "description": "Equality filter for \"estoques\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          {
-            "name": "filter[createdAt]",
-            "required": false,
-            "description": "Equality filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[createdAt$lt]",
-            "required": false,
-            "description": "Less-than filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[createdAt$lte]",
-            "required": false,
-            "description": "Less-than or equal filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[createdAt$gt]",
-            "required": false,
-            "description": "Greater-than filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[createdAt$gte]",
-            "required": false,
-            "description": "Greater-than or equal filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt]",
-            "required": false,
-            "description": "Equality filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt$lt]",
-            "required": false,
-            "description": "Less-than filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt$lte]",
-            "required": false,
-            "description": "Less-than or equal filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt$gt]",
-            "required": false,
-            "description": "Greater-than filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt$gte]",
-            "required": false,
-            "description": "Greater-than or equal filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EstoqueListResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      }
-    },
-    "/api/user/{id}/relationships/estoques": {
-      "get": {
-        "operationId": "fetch-User-relationship-estoques",
-        "description": "Fetch the \"estoques\" relationships for a \"User\"",
-        "tags": [
-          "user"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          },
-          {
-            "$ref": "#/components/parameters/sort"
-          },
-          {
-            "$ref": "#/components/parameters/page-offset"
-          },
-          {
-            "$ref": "#/components/parameters/page-limit"
-          },
-          {
-            "name": "filter[id]",
-            "required": false,
-            "description": "Id filter",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[email]",
-            "required": false,
-            "description": "Equality filter for \"email\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[email$contains]",
-            "required": false,
-            "description": "String contains filter for \"email\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[email$icontains]",
-            "required": false,
-            "description": "String case-insensitive contains filter for \"email\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[email$search]",
-            "required": false,
-            "description": "String full-text search filter for \"email\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[email$startsWith]",
-            "required": false,
-            "description": "String startsWith filter for \"email\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[email$endsWith]",
-            "required": false,
-            "description": "String endsWith filter for \"email\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[name]",
-            "required": false,
-            "description": "Equality filter for \"name\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[name$contains]",
-            "required": false,
-            "description": "String contains filter for \"name\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[name$icontains]",
-            "required": false,
-            "description": "String case-insensitive contains filter for \"name\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[name$search]",
-            "required": false,
-            "description": "String full-text search filter for \"name\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[name$startsWith]",
-            "required": false,
-            "description": "String startsWith filter for \"name\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[name$endsWith]",
-            "required": false,
-            "description": "String endsWith filter for \"name\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[password]",
-            "required": false,
-            "description": "Equality filter for \"password\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[password$contains]",
-            "required": false,
-            "description": "String contains filter for \"password\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[password$icontains]",
-            "required": false,
-            "description": "String case-insensitive contains filter for \"password\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[password$search]",
-            "required": false,
-            "description": "String full-text search filter for \"password\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[password$startsWith]",
-            "required": false,
-            "description": "String startsWith filter for \"password\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[password$endsWith]",
-            "required": false,
-            "description": "String endsWith filter for \"password\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[estoques]",
-            "required": false,
-            "description": "Equality filter for \"estoques\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          {
-            "name": "filter[createdAt]",
-            "required": false,
-            "description": "Equality filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[createdAt$lt]",
-            "required": false,
-            "description": "Less-than filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[createdAt$lte]",
-            "required": false,
-            "description": "Less-than or equal filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[createdAt$gt]",
-            "required": false,
-            "description": "Greater-than filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[createdAt$gte]",
-            "required": false,
-            "description": "Greater-than or equal filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt]",
-            "required": false,
-            "description": "Equality filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt$lt]",
-            "required": false,
-            "description": "Less-than filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt$lte]",
-            "required": false,
-            "description": "Less-than or equal filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt$gt]",
-            "required": false,
-            "description": "Greater-than filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt$gte]",
-            "required": false,
-            "description": "Greater-than or equal filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      },
-      "put": {
-        "operationId": "update-User-relationship-estoques-put",
-        "description": "Update \"estoques\" relationships for a \"User\"",
-        "tags": [
-          "user"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/vnd.api+json": {
-              "schema": {
-                "$ref": "#/components/schemas/_toManyRelationshipRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      },
-      "patch": {
-        "operationId": "update-User-relationship-estoques-patch",
-        "description": "Update \"estoques\" relationships for a \"User\"",
-        "tags": [
-          "user"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/vnd.api+json": {
-              "schema": {
-                "$ref": "#/components/schemas/_toManyRelationshipRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      },
-      "post": {
-        "operationId": "create-User-relationship-estoques",
-        "description": "Create new \"estoques\" relationships for a \"User\"",
-        "tags": [
-          "user"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/vnd.api+json": {
-              "schema": {
-                "$ref": "#/components/schemas/_toManyRelationshipRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
-                }
-              }
-            }
           },
           "403": {
             "description": "Request is forbidden",
@@ -2052,17 +1075,6 @@
             }
           },
           {
-            "name": "filter[estoque]",
-            "required": false,
-            "description": "Equality filter for \"estoque\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "filter[createdAt]",
             "required": false,
             "description": "Equality filter for \"createdAt\"",
@@ -2473,211 +1485,6 @@
         "security": []
       }
     },
-    "/api/item/{id}/estoque": {
-      "get": {
-        "operationId": "fetch-Item-related-estoque",
-        "description": "Fetch the related \"estoque\" resource for \"Item\"",
-        "tags": [
-          "item"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          },
-          {
-            "$ref": "#/components/parameters/include"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EstoqueResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      }
-    },
-    "/api/item/{id}/relationships/estoque": {
-      "get": {
-        "operationId": "fetch-Item-relationship-estoque",
-        "description": "Fetch the \"estoque\" relationships for a \"Item\"",
-        "tags": [
-          "item"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_toOneRelationshipResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      },
-      "put": {
-        "operationId": "update-Item-relationship-estoque-put",
-        "description": "Update \"estoque\" relationship for a \"Item\"",
-        "tags": [
-          "item"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/vnd.api+json": {
-              "schema": {
-                "$ref": "#/components/schemas/_toOneRelationshipRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_toOneRelationshipResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      },
-      "patch": {
-        "operationId": "update-Item-relationship-estoque-patch",
-        "description": "Update \"estoque\" relationship for a \"Item\"",
-        "tags": [
-          "item"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/vnd.api+json": {
-              "schema": {
-                "$ref": "#/components/schemas/_toOneRelationshipRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_toOneRelationshipResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      }
-    },
     "/api/estoque": {
       "get": {
         "operationId": "list-Estoque",
@@ -2710,23 +1517,64 @@
             }
           },
           {
-            "name": "filter[itens]",
+            "name": "filter[userId]",
             "required": false,
-            "description": "Equality filter for \"itens\"",
+            "description": "Equality filter for \"userId\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
+              "type": "string"
             }
           },
           {
-            "name": "filter[user]",
+            "name": "filter[userId$contains]",
             "required": false,
-            "description": "Equality filter for \"user\"",
+            "description": "String contains filter for \"userId\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[userId$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"userId\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[userId$search]",
+            "required": false,
+            "description": "String full-text search filter for \"userId\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[userId$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"userId\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[userId$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"userId\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -3120,800 +1968,6 @@
         "responses": {
           "200": {
             "description": "Successful operation"
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      }
-    },
-    "/api/estoque/{id}/itens": {
-      "get": {
-        "operationId": "fetch-Estoque-related-itens",
-        "description": "Fetch the related \"itens\" resource for \"Estoque\"",
-        "tags": [
-          "estoque"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          },
-          {
-            "$ref": "#/components/parameters/include"
-          },
-          {
-            "$ref": "#/components/parameters/sort"
-          },
-          {
-            "$ref": "#/components/parameters/page-offset"
-          },
-          {
-            "$ref": "#/components/parameters/page-limit"
-          },
-          {
-            "name": "filter[id]",
-            "required": false,
-            "description": "Id filter",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[itens]",
-            "required": false,
-            "description": "Equality filter for \"itens\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          {
-            "name": "filter[user]",
-            "required": false,
-            "description": "Equality filter for \"user\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[createdAt]",
-            "required": false,
-            "description": "Equality filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[createdAt$lt]",
-            "required": false,
-            "description": "Less-than filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[createdAt$lte]",
-            "required": false,
-            "description": "Less-than or equal filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[createdAt$gt]",
-            "required": false,
-            "description": "Greater-than filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[createdAt$gte]",
-            "required": false,
-            "description": "Greater-than or equal filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt]",
-            "required": false,
-            "description": "Equality filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt$lt]",
-            "required": false,
-            "description": "Less-than filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt$lte]",
-            "required": false,
-            "description": "Less-than or equal filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt$gt]",
-            "required": false,
-            "description": "Greater-than filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt$gte]",
-            "required": false,
-            "description": "Greater-than or equal filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ItemListResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      }
-    },
-    "/api/estoque/{id}/relationships/itens": {
-      "get": {
-        "operationId": "fetch-Estoque-relationship-itens",
-        "description": "Fetch the \"itens\" relationships for a \"Estoque\"",
-        "tags": [
-          "estoque"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          },
-          {
-            "$ref": "#/components/parameters/sort"
-          },
-          {
-            "$ref": "#/components/parameters/page-offset"
-          },
-          {
-            "$ref": "#/components/parameters/page-limit"
-          },
-          {
-            "name": "filter[id]",
-            "required": false,
-            "description": "Id filter",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[itens]",
-            "required": false,
-            "description": "Equality filter for \"itens\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          {
-            "name": "filter[user]",
-            "required": false,
-            "description": "Equality filter for \"user\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[createdAt]",
-            "required": false,
-            "description": "Equality filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[createdAt$lt]",
-            "required": false,
-            "description": "Less-than filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[createdAt$lte]",
-            "required": false,
-            "description": "Less-than or equal filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[createdAt$gt]",
-            "required": false,
-            "description": "Greater-than filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[createdAt$gte]",
-            "required": false,
-            "description": "Greater-than or equal filter for \"createdAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt]",
-            "required": false,
-            "description": "Equality filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt$lt]",
-            "required": false,
-            "description": "Less-than filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt$lte]",
-            "required": false,
-            "description": "Less-than or equal filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt$gt]",
-            "required": false,
-            "description": "Greater-than filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[updatedAt$gte]",
-            "required": false,
-            "description": "Greater-than or equal filter for \"updatedAt\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      },
-      "put": {
-        "operationId": "update-Estoque-relationship-itens-put",
-        "description": "Update \"itens\" relationships for a \"Estoque\"",
-        "tags": [
-          "estoque"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/vnd.api+json": {
-              "schema": {
-                "$ref": "#/components/schemas/_toManyRelationshipRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      },
-      "patch": {
-        "operationId": "update-Estoque-relationship-itens-patch",
-        "description": "Update \"itens\" relationships for a \"Estoque\"",
-        "tags": [
-          "estoque"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/vnd.api+json": {
-              "schema": {
-                "$ref": "#/components/schemas/_toManyRelationshipRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      },
-      "post": {
-        "operationId": "create-Estoque-relationship-itens",
-        "description": "Create new \"itens\" relationships for a \"Estoque\"",
-        "tags": [
-          "estoque"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/vnd.api+json": {
-              "schema": {
-                "$ref": "#/components/schemas/_toManyRelationshipRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      }
-    },
-    "/api/estoque/{id}/user": {
-      "get": {
-        "operationId": "fetch-Estoque-related-user",
-        "description": "Fetch the related \"user\" resource for \"Estoque\"",
-        "tags": [
-          "estoque"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          },
-          {
-            "$ref": "#/components/parameters/include"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      }
-    },
-    "/api/estoque/{id}/relationships/user": {
-      "get": {
-        "operationId": "fetch-Estoque-relationship-user",
-        "description": "Fetch the \"user\" relationships for a \"Estoque\"",
-        "tags": [
-          "estoque"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_toOneRelationshipResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      },
-      "put": {
-        "operationId": "update-Estoque-relationship-user-put",
-        "description": "Update \"user\" relationship for a \"Estoque\"",
-        "tags": [
-          "estoque"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/vnd.api+json": {
-              "schema": {
-                "$ref": "#/components/schemas/_toOneRelationshipRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_toOneRelationshipResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request is forbidden",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Resource is not found",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_errorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      },
-      "patch": {
-        "operationId": "update-Estoque-relationship-user-patch",
-        "description": "Update \"user\" relationship for a \"Estoque\"",
-        "tags": [
-          "estoque"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/vnd.api+json": {
-              "schema": {
-                "$ref": "#/components/schemas/_toOneRelationshipRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/vnd.api+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_toOneRelationshipResponse"
-                }
-              }
-            }
           },
           "403": {
             "description": "Request is forbidden",
@@ -4613,164 +2667,6 @@
           }
         }
       },
-      "_relationLinks": {
-        "type": "object",
-        "required": [
-          "self",
-          "related"
-        ],
-        "description": "Links related to a relationship",
-        "properties": {
-          "self": {
-            "type": "string",
-            "description": "Link for fetching this relationship"
-          },
-          "related": {
-            "type": "string",
-            "description": "Link for fetching the resource represented by this relationship"
-          }
-        }
-      },
-      "_toOneRelationship": {
-        "type": "object",
-        "description": "A to-one relationship",
-        "properties": {
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/_resourceIdentifier"
-              }
-            ],
-            "nullable": true
-          }
-        }
-      },
-      "_toOneRelationshipWithLinks": {
-        "type": "object",
-        "required": [
-          "links",
-          "data"
-        ],
-        "description": "A to-one relationship with links",
-        "properties": {
-          "links": {
-            "$ref": "#/components/schemas/_relationLinks"
-          },
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/_resourceIdentifier"
-              }
-            ],
-            "nullable": true
-          }
-        }
-      },
-      "_toManyRelationship": {
-        "type": "object",
-        "required": [
-          "data"
-        ],
-        "description": "A to-many relationship",
-        "properties": {
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/_resourceIdentifier"
-            }
-          }
-        }
-      },
-      "_toManyRelationshipWithLinks": {
-        "type": "object",
-        "required": [
-          "links",
-          "data"
-        ],
-        "description": "A to-many relationship with links",
-        "properties": {
-          "links": {
-            "$ref": "#/components/schemas/_pagedRelationLinks"
-          },
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/_resourceIdentifier"
-            }
-          }
-        }
-      },
-      "_pagedRelationLinks": {
-        "description": "Relationship links with pagination information",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/_pagination"
-          },
-          {
-            "$ref": "#/components/schemas/_relationLinks"
-          }
-        ]
-      },
-      "_toManyRelationshipRequest": {
-        "type": "object",
-        "required": [
-          "data"
-        ],
-        "description": "Input for manipulating a to-many relationship",
-        "properties": {
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/_resourceIdentifier"
-            }
-          }
-        }
-      },
-      "_toOneRelationshipRequest": {
-        "description": "Input for manipulating a to-one relationship",
-        "type": "object",
-        "required": [
-          "data"
-        ],
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/_resourceIdentifier"
-          }
-        },
-        "nullable": true
-      },
-      "_toManyRelationshipResponse": {
-        "description": "Response for a to-many relationship",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/_toManyRelationshipWithLinks"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "jsonapi": {
-                "$ref": "#/components/schemas/_jsonapi"
-              }
-            }
-          }
-        ]
-      },
-      "_toOneRelationshipResponse": {
-        "description": "Response for a to-one relationship",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/_toOneRelationshipWithLinks"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "jsonapi": {
-                "$ref": "#/components/schemas/_jsonapi"
-              }
-            }
-          }
-        ]
-      },
       "User": {
         "type": "object",
         "description": "The \"User\" model",
@@ -4804,15 +2700,8 @@
               },
               "updatedAt": {
                 "type": "string",
-                "format": "date-time"
-              }
-            }
-          },
-          "relationships": {
-            "type": "object",
-            "properties": {
-              "estoques": {
-                "$ref": "#/components/schemas/_toManyRelationshipWithLinks"
+                "format": "date-time",
+                "nullable": true
               }
             }
           }
@@ -4841,8 +2730,7 @@
                 "required": [
                   "email",
                   "name",
-                  "password",
-                  "updatedAt"
+                  "password"
                 ],
                 "properties": {
                   "email": {
@@ -4860,15 +2748,8 @@
                   },
                   "updatedAt": {
                     "type": "string",
-                    "format": "date-time"
-                  }
-                }
-              },
-              "relationships": {
-                "type": "object",
-                "properties": {
-                  "estoques": {
-                    "$ref": "#/components/schemas/_toManyRelationship"
+                    "format": "date-time",
+                    "nullable": true
                   }
                 }
               }
@@ -4919,15 +2800,8 @@
                   },
                   "updatedAt": {
                     "type": "string",
-                    "format": "date-time"
-                  }
-                }
-              },
-              "relationships": {
-                "type": "object",
-                "properties": {
-                  "estoques": {
-                    "$ref": "#/components/schemas/_toManyRelationship"
+                    "format": "date-time",
+                    "nullable": true
                   }
                 }
               }
@@ -4958,11 +2832,7 @@
                 "properties": {
                   "relationships": {
                     "type": "object",
-                    "properties": {
-                      "estoques": {
-                        "$ref": "#/components/schemas/_toManyRelationship"
-                      }
-                    }
+                    "properties": {}
                   }
                 }
               }
@@ -5005,11 +2875,7 @@
                   "properties": {
                     "relationships": {
                       "type": "object",
-                      "properties": {
-                        "estoques": {
-                          "$ref": "#/components/schemas/_toManyRelationship"
-                        }
-                      }
+                      "properties": {}
                     }
                   }
                 }
@@ -5069,7 +2935,8 @@
               },
               "dataVal": {
                 "type": "string",
-                "format": "date-time"
+                "format": "date-time",
+                "nullable": true
               },
               "perecivel": {
                 "type": "boolean"
@@ -5077,29 +2944,13 @@
               "category": {
                 "type": "string"
               },
-              "estoqueId": {
-                "type": "string",
-                "nullable": true
-              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
               },
               "updatedAt": {
                 "type": "string",
-                "format": "date-time"
-              }
-            }
-          },
-          "relationships": {
-            "type": "object",
-            "properties": {
-              "estoque": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/_toOneRelationshipWithLinks"
-                  }
-                ],
+                "format": "date-time",
                 "nullable": true
               }
             }
@@ -5131,9 +2982,7 @@
                   "description",
                   "qtd",
                   "kgl",
-                  "dataVal",
-                  "category",
-                  "updatedAt"
+                  "category"
                 ],
                 "properties": {
                   "name": {
@@ -5150,7 +2999,8 @@
                   },
                   "dataVal": {
                     "type": "string",
-                    "format": "date-time"
+                    "format": "date-time",
+                    "nullable": true
                   },
                   "perecivel": {
                     "type": "boolean"
@@ -5158,29 +3008,13 @@
                   "category": {
                     "type": "string"
                   },
-                  "estoqueId": {
-                    "type": "string",
-                    "nullable": true
-                  },
                   "createdAt": {
                     "type": "string",
                     "format": "date-time"
                   },
                   "updatedAt": {
                     "type": "string",
-                    "format": "date-time"
-                  }
-                }
-              },
-              "relationships": {
-                "type": "object",
-                "properties": {
-                  "estoque": {
-                    "allOf": [
-                      {
-                        "$ref": "#/components/schemas/_toOneRelationship"
-                      }
-                    ],
+                    "format": "date-time",
                     "nullable": true
                   }
                 }
@@ -5231,7 +3065,8 @@
                   },
                   "dataVal": {
                     "type": "string",
-                    "format": "date-time"
+                    "format": "date-time",
+                    "nullable": true
                   },
                   "perecivel": {
                     "type": "boolean"
@@ -5239,29 +3074,13 @@
                   "category": {
                     "type": "string"
                   },
-                  "estoqueId": {
-                    "type": "string",
-                    "nullable": true
-                  },
                   "createdAt": {
                     "type": "string",
                     "format": "date-time"
                   },
                   "updatedAt": {
                     "type": "string",
-                    "format": "date-time"
-                  }
-                }
-              },
-              "relationships": {
-                "type": "object",
-                "properties": {
-                  "estoque": {
-                    "allOf": [
-                      {
-                        "$ref": "#/components/schemas/_toOneRelationship"
-                      }
-                    ],
+                    "format": "date-time",
                     "nullable": true
                   }
                 }
@@ -5293,11 +3112,7 @@
                 "properties": {
                   "relationships": {
                     "type": "object",
-                    "properties": {
-                      "estoque": {
-                        "$ref": "#/components/schemas/_toOneRelationship"
-                      }
-                    }
+                    "properties": {}
                   }
                 }
               }
@@ -5340,11 +3155,7 @@
                   "properties": {
                     "relationships": {
                       "type": "object",
-                      "properties": {
-                        "estoque": {
-                          "$ref": "#/components/schemas/_toOneRelationship"
-                        }
-                      }
+                      "properties": {}
                     }
                   }
                 }
@@ -5399,18 +3210,8 @@
               },
               "updatedAt": {
                 "type": "string",
-                "format": "date-time"
-              }
-            }
-          },
-          "relationships": {
-            "type": "object",
-            "properties": {
-              "itens": {
-                "$ref": "#/components/schemas/_toManyRelationshipWithLinks"
-              },
-              "user": {
-                "$ref": "#/components/schemas/_toOneRelationshipWithLinks"
+                "format": "date-time",
+                "nullable": true
               }
             }
           }
@@ -5437,8 +3238,7 @@
               "attributes": {
                 "type": "object",
                 "required": [
-                  "userId",
-                  "updatedAt"
+                  "userId"
                 ],
                 "properties": {
                   "userId": {
@@ -5450,18 +3250,8 @@
                   },
                   "updatedAt": {
                     "type": "string",
-                    "format": "date-time"
-                  }
-                }
-              },
-              "relationships": {
-                "type": "object",
-                "properties": {
-                  "itens": {
-                    "$ref": "#/components/schemas/_toManyRelationship"
-                  },
-                  "user": {
-                    "$ref": "#/components/schemas/_toOneRelationship"
+                    "format": "date-time",
+                    "nullable": true
                   }
                 }
               }
@@ -5506,18 +3296,8 @@
                   },
                   "updatedAt": {
                     "type": "string",
-                    "format": "date-time"
-                  }
-                }
-              },
-              "relationships": {
-                "type": "object",
-                "properties": {
-                  "itens": {
-                    "$ref": "#/components/schemas/_toManyRelationship"
-                  },
-                  "user": {
-                    "$ref": "#/components/schemas/_toOneRelationship"
+                    "format": "date-time",
+                    "nullable": true
                   }
                 }
               }
@@ -5548,14 +3328,7 @@
                 "properties": {
                   "relationships": {
                     "type": "object",
-                    "properties": {
-                      "itens": {
-                        "$ref": "#/components/schemas/_toManyRelationship"
-                      },
-                      "user": {
-                        "$ref": "#/components/schemas/_toOneRelationship"
-                      }
-                    }
+                    "properties": {}
                   }
                 }
               }
@@ -5598,14 +3371,7 @@
                   "properties": {
                     "relationships": {
                       "type": "object",
-                      "properties": {
-                        "itens": {
-                          "$ref": "#/components/schemas/_toManyRelationship"
-                        },
-                        "user": {
-                          "$ref": "#/components/schemas/_toOneRelationship"
-                        }
-                      }
+                      "properties": {}
                     }
                   }
                 }
@@ -5660,7 +3426,8 @@
               },
               "updatedAt": {
                 "type": "string",
-                "format": "date-time"
+                "format": "date-time",
+                "nullable": true
               }
             }
           }
@@ -5687,8 +3454,7 @@
               "attributes": {
                 "type": "object",
                 "required": [
-                  "nome",
-                  "updatedAt"
+                  "nome"
                 ],
                 "properties": {
                   "nome": {
@@ -5700,7 +3466,8 @@
                   },
                   "updatedAt": {
                     "type": "string",
-                    "format": "date-time"
+                    "format": "date-time",
+                    "nullable": true
                   }
                 }
               }
@@ -5745,7 +3512,8 @@
                   },
                   "updatedAt": {
                     "type": "string",
-                    "format": "date-time"
+                    "format": "date-time",
+                    "nullable": true
                   }
                 }
               }
