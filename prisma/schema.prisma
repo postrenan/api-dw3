@@ -33,7 +33,7 @@ model Item {
   qtd         Int
   kgl         Float
   dataVal     DateTime
-  perecivel   Boolean
+  perecivel   Boolean  @default(true)
   category    String
   estoque     Estoque? @relation(fields: [estoqueId], references: [id])
   estoqueId   String?
