@@ -64,8 +64,3 @@ plugin openapi {
     }
 }
 
-plugin policy {
-  provider = '@core/access-policy'
-  output = 'src/lib/zenstack'
-  compile = false
-}

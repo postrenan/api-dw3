@@ -55,7 +55,4 @@ app.use(
     })
 );
 
-const policy = require('./lib/zenstack/policy').default;
-const db = enhance(prisma, policy);
-
 export default app;
