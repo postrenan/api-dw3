@@ -63,3 +63,9 @@ plugin openapi {
         myBearer: { type: 'http', scheme: 'bearer', bearerFormat: 'JWT' }
     }
 }
+
+plugin policy {
+  provider = '@core/access-policy'
+  output = 'src/lib/zenstack'
+  compile = false
+}
