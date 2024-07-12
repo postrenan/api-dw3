@@ -23,10 +23,27 @@ dotenv.config();
 
 const prisma = new PrismaClient();
 
-// create a RESTful-style API handler
 const apiHandler = RestApiHandler({ endpoint: 'http://localhost:3000/api' });
 
 app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(spec, options));
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://project3-2024a-renan-e-thales.vercel.app');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header('Access-Control-Allow-Methods', 'GET,PATCH,DELETE,POST,PUT');
+    res.header('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+
+    if (req.method === 'OPTIONS') {
+        return res.sendStatus(200);
+    }
+
+    next();
+});
+
+// Suas outras rotas e middleware aqui
+app.post('/api/user', (req, res) => {
+    res.send('Resposta do servidor para POST');
+});
 
 app.use(
     '/api',

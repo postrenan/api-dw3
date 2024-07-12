@@ -12,7 +12,6 @@ app.use(express.json());
 
 const prisma = new PrismaClient();
 
-// load .env environment variables
 dotenv.config();
 
 app.listen(3000, () =>
