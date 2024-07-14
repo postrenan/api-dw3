@@ -16,56 +16,63 @@ model User {
     createdAt DateTime @default(now())
     updatedAt DateTime? @updatedAt
 
-    @@allow('all', true)
-
-	estoque Estoque[]
-
-	item Item[]
+    estoque Estoque[]
+    item Item[]
 }
 
 model Item {
-     id String @id @default(uuid())
-     name String
-     description String
-     qtd Int
-     peso String
-     dataVal String?
-     perecivel Boolean @default(true)
-     categoryId String
-     userId String
-     createdAt DateTime @default(now())
-     updatedAt DateTime? @updatedAt
+    id String @id @default(uuid())
+    name String
+    description String
+    qtd Int
+    peso String
+    dataVal String?
+    perecivel Boolean @default(true)
+    createdAt DateTime @default(now())
+    updatedAt DateTime? @updatedAt
+	userId String
 
-     @@allow('all', true)
+    @@allow('all', true)
 
-     category Categoria @relation(fields: [categoryId], references: [id])
-     user User @relation(fields: [userId], references: [id])
-     estoque Estoque[]
- }
+    estoque Estoque[]
 
- model Estoque {
-     id String @id @default(uuid())
-     itemId String
-     userId String
-     createdAt DateTime @default(now())
-     updatedAt DateTime? @updatedAt
+	itemCategoria ItemCategoria[]
 
-     @@allow('all', true)
+	user User @relation(fields: [userId], references: [id])
+}
 
-     item Item @relation(fields: [itemId], references: [id])
-     user User @relation(fields: [userId], references: [id])
- }
+model Estoque {
+    id String @id @default(uuid())
+    itemId String
+    userId String
+    createdAt DateTime @default(now())
+    updatedAt DateTime? @updatedAt
 
- model Categoria {
-     id String @id
-     nome String
-     createdAt DateTime @default(now())
-     updatedAt DateTime? @updatedAt
+    @@allow('all', true)
 
-     @@allow('all', true)
-     items Item[]
- }
+    item Item @relation(fields: [itemId], references: [id])
+    user User @relation(fields: [userId], references: [id])
+}
 
+model Categoria {
+    id String @id
+    nome String
+    createdAt DateTime @default(now())
+    updatedAt DateTime? @updatedAt
+
+    @@allow('all', true)
+
+	itemCategoria ItemCategoria[]
+}
+
+model ItemCategoria {
+    itemId String
+    categoriaId String
+
+    @@id([itemId, categoriaId])
+    item Item @relation(fields: [itemId], references: [id])
+    categoria Categoria @relation(fields: [categoriaId], references: [id])
+}
 
 plugin openapi {
     provider = '@zenstackhq/openapi'

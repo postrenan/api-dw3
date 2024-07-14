@@ -13,7 +13,6 @@ generator client {
   provider = "prisma-client-js"
 }
 
-/// @@allow('all', true)
 model User {
   id        String    @id() @default(uuid())
   email     String    @unique()
@@ -28,20 +27,19 @@ model User {
 
 /// @@allow('all', true)
 model Item {
-  id          String    @id() @default(uuid())
-  name        String
-  description String
-  qtd         Int
-  peso        String
-  dataVal     String?
-  perecivel   Boolean   @default(true)
-  categoryId  String
-  userId      String
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime? @updatedAt()
-  category    Categoria @relation(fields: [categoryId], references: [id])
-  user        User      @relation(fields: [userId], references: [id])
-  estoque     Estoque[]
+  id            String          @id() @default(uuid())
+  name          String
+  description   String
+  qtd           Int
+  peso          String
+  dataVal       String?
+  perecivel     Boolean         @default(true)
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime?       @updatedAt()
+  userId        String
+  estoque       Estoque[]
+  itemCategoria ItemCategoria[]
+  user          User            @relation(fields: [userId], references: [id])
 }
 
 /// @@allow('all', true)
@@ -57,9 +55,18 @@ model Estoque {
 
 /// @@allow('all', true)
 model Categoria {
-  id        String    @id()
-  nome      String
-  createdAt DateTime  @default(now())
-  updatedAt DateTime? @updatedAt()
-  items     Item[]
+  id            String          @id()
+  nome          String
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime?       @updatedAt()
+  itemCategoria ItemCategoria[]
+}
+
+model ItemCategoria {
+  itemId      String
+  categoriaId String
+  item        Item      @relation(fields: [itemId], references: [id])
+  categoria   Categoria @relation(fields: [categoriaId], references: [id])
+
+  @@id([itemId, categoriaId])
 }
