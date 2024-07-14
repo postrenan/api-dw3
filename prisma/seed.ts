@@ -42,13 +42,11 @@ const itemData: Prisma.ItemCreateInput[] = [
         peso: '1Kg',
         dataVal: '2024-07-02T20:40:37Z',
         perecivel: false,
-        category: '1',
         userId: '1',
     },
     {
         id: randomUUID(),
         name: 'Detergente',
-        category: '2',
         description: 'Detergentes de 500 ml cada da marca bom brilho cheiro de coco',
         qtd: 25,
         peso: '12.5Kg',
@@ -59,7 +57,6 @@ const itemData: Prisma.ItemCreateInput[] = [
     {
         id: randomUUID(),
         name: 'Arroz',
-        category: '3',
         description: 'pacotes de arroz da marca bom arroz 4kg cada pacote',
         qtd: 10,
         peso: '40Kg',
