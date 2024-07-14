@@ -17,38 +17,55 @@ model User {
     updatedAt DateTime? @updatedAt
 
     @@allow('all', true)
+
+	estoque Estoque[]
+
+	item Item[]
 }
+
 model Item {
-    id String @id @default(uuid())
-    name String
-    description String
-    qtd Int
-    kgl Float
-    dataVal DateTime?
-    perecivel Boolean @default(true)
-    category String
-    createdAt DateTime @default(now())
-    updatedAt DateTime? @updatedAt
+     id String @id @default(uuid())
+     name String
+     description String
+     qtd Int
+     peso String
+     dataVal String?
+     perecivel Boolean @default(true)
+     categoryId String
+     userId String
+     createdAt DateTime @default(now())
+     updatedAt DateTime? @updatedAt
 
-    @@allow('all', true)
-}
+     @@allow('all', true)
 
-model Estoque {
-    id String @id @default(uuid())
-    userId String
-    createdAt DateTime @default(now())
-    updatedAt DateTime? @updatedAt
-    @@allow('all', true )
-}
+     category Categoria @relation(fields: [categoryId], references: [id])
+     user User @relation(fields: [userId], references: [id])
+     estoque Estoque[]
+ }
 
-model Categoria {
-    id String @id @default(uuid())
-    nome String
-    createdAt DateTime @default(now())
-    updatedAt DateTime? @updatedAt
+ model Estoque {
+     id String @id @default(uuid())
+     itemId String
+     userId String
+     createdAt DateTime @default(now())
+     updatedAt DateTime? @updatedAt
 
-    @@allow('all', true)
-}
+     @@allow('all', true)
+
+     item Item @relation(fields: [itemId], references: [id])
+     user User @relation(fields: [userId], references: [id])
+ }
+
+ model Categoria {
+     id String @id
+     nome String
+     createdAt DateTime @default(now())
+     updatedAt DateTime? @updatedAt
+
+     @@allow('all', true)
+     items Item[]
+ }
+
 
 plugin openapi {
     provider = '@zenstackhq/openapi'
