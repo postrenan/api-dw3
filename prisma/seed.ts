@@ -42,7 +42,16 @@ const itemData: Prisma.ItemCreateInput[] = [
         peso: '1Kg',
         dataVal: '2024-07-02T20:40:37Z',
         perecivel: false,
-        userId: '1',
+        user: {
+            connect:{
+                id: '1'
+            }
+        },
+        category : {
+            connect:{
+                id: '1'
+            }
+        }
     },
     {
         id: randomUUID(),
@@ -52,7 +61,16 @@ const itemData: Prisma.ItemCreateInput[] = [
         peso: '12.5Kg',
         dataVal: '2024-07-02T20:40:37Z',
         perecivel: false,
-        userId: '1',
+        user: {
+            connect:{
+                id: '1'
+            }
+        },
+        category : {
+            connect:{
+                id: '2'
+            }
+        }
     },
     {
         id: randomUUID(),
@@ -62,7 +80,16 @@ const itemData: Prisma.ItemCreateInput[] = [
         peso: '40Kg',
         dataVal: '2024-07-02T20:40:37Z',
         perecivel: true,
-        userId: '1',
+        user: {
+            connect:{
+                id: '2'
+            }
+        },
+        category : {
+            connect:{
+                id: '3'
+            }
+        }
     },
 ];
 
