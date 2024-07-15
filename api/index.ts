@@ -20,12 +20,6 @@ const app = express();
 app.use(express.json());
 dotenv.config();
 
-const prisma = new PrismaClient();
-
-const apiHandler = RestApiHandler({ endpoint: 'http://localhost:3000/api' });
-
-app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(spec, options));
-
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Credentials', 'true');
@@ -39,6 +33,11 @@ app.use((req, res, next) => {
     next();
 });
 
+const prisma = new PrismaClient();
+
+const apiHandler = RestApiHandler({ endpoint: 'http://localhost:3000/api' });
+
+app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(spec, options));
 
 app.use(
     '/api',
