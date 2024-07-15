@@ -39,23 +39,6 @@ app.use((req, res, next) => {
     next();
 });
 
-app.post(
-    '/api/user',
-    ZenStackMiddleware({
-        getPrisma: () => {
-        return enhance(prisma);
-    },
-    handler: apiHandler
-}));
-
-app.post(
-    '/api/item',
-    ZenStackMiddleware({
-        getPrisma: () => {
-            return enhance(prisma);
-        },
-        handler: apiHandler
-    }));
 
 app.use(
     '/api',
