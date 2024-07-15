@@ -139,7 +139,6 @@ const estoqueData: Prisma.EstoqueCreateInput[] = [
 async function main() {
     console.log(`Start seeding ...`);
 
-    // Seed para categorias
     for (const c of categoryData) {
         const category = await prisma.categoria.upsert({
             where: { id: c.id },
@@ -149,7 +148,6 @@ async function main() {
         console.log(`Upserted category with id: ${category.id}`);
     }
 
-    // Seed para usuários
     for (const u of userData) {
         const user = await prisma.user.upsert({
             where: { id: u.id },
@@ -159,7 +157,6 @@ async function main() {
         console.log(`Upserted User with id: ${user.id}`);
     }
 
-    // Seed para itens
     for (const i of itemData) {
         const item = await prisma.item.upsert({
             where: { id: i.id },
@@ -169,7 +166,6 @@ async function main() {
         console.log(`Upserted Item with id: ${item.id}`);
     }
 
-    // Seed para estoque
     for (const e of estoqueData) {
         const estoque = await prisma.estoque.upsert({
             where: { id: e.id },
