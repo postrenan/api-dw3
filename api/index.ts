@@ -40,10 +40,6 @@ app.use((req, res, next) => {
     next();
 });
 
-// Suas outras rotas e middleware aqui
-app.post('/api/user', (req, res) => {
-    res.send('Resposta do servidor para POST');
-});
 
 app.use(
     '/api',
