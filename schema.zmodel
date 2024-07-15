@@ -18,6 +18,8 @@ model User {
 
     estoque Estoque[]
     item Item[]
+
+    @@allow('all', true)
 }
 
 model Item {
@@ -72,6 +74,8 @@ model ItemCategoria {
     @@id([itemId, categoriaId])
     item Item @relation(fields: [itemId], references: [id])
     categoria Categoria @relation(fields: [categoriaId], references: [id])
+
+    @@allow('all', true)
 }
 
 plugin openapi {
