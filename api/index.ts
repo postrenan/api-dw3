@@ -16,7 +16,6 @@ const spec = JSON.parse(
     fs.readFileSync(path.join(__dirname, '../estoque-api.json'), 'utf8')
 );
 
-
 const app = express();
 app.use(express.json());
 dotenv.config();
@@ -39,6 +38,24 @@ app.use((req, res, next) => {
 
     next();
 });
+
+app.post(
+    '/api/user',
+    ZenStackMiddleware({
+        getPrisma: () => {
+        return enhance(prisma);
+    },
+    handler: apiHandler
+}));
+
+app.post(
+    '/api/item',
+    ZenStackMiddleware({
+        getPrisma: () => {
+            return enhance(prisma);
+        },
+        handler: apiHandler
+    }));
 
 app.use(
     '/api',
